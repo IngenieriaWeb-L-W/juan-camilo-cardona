@@ -24,10 +24,12 @@ const operationsList = [];
       document
         .querySelector(".history-empty__container")
         .classList.add("hidden");
+      document.querySelector(".clean-history__btn").classList.remove("hidden");
     } else {
       document
         .querySelector(".history-empty__container")
         .classList.remove("hidden");
+      document.querySelector(".clean-history__btn").classList.add("hidden");
     }
   });
 })(document, window);
@@ -38,15 +40,8 @@ const appendHistoryItem = (historyItem) => {
   const $li = document.createElement("li");
   localStorage.setItem("historyItems", JSON.stringify(operationsList));
   console.log({ APPENDING: historyItem });
-  $li.textContent = `${operation} = ${result}`;
-  document.querySelector(".history-items").appendChild($li);
-  document.querySelector(".history-empty__container").classList.add("hidden");
-};
-
-const handleRemoveOperations = () => {
-  document
-    .querySelector(".history-empty__container")
-    .classList.remove("hidden");
+  history - items;
+  document.querySelector(".clean-history__btn").classList.add("hidden");
 
   document.querySelectorAll(".history-items > li").forEach((element) => {
     element.remove();
@@ -148,4 +143,17 @@ const handleClearInput = () => {
   hasDoublePoint = false;
   document.getElementById("current-operation").value = "";
   document.getElementById("result").value = "";
+};
+
+const handleRemoveOperations = () => {
+  document
+    .querySelector(".history-empty__container")
+    .classList.remove("hidden");
+  document.querySelector(".clean-history__btn").classList.add("hidden");
+
+  document.querySelectorAll(".history-items > li").forEach((element) => {
+    element.remove();
+  });
+  localStorage.setItem("historyItems", "[]");
+  operationsList.length = 0;
 };

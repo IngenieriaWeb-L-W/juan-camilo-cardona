@@ -1,0 +1,9 @@
+@media (max-width: 991px) {
+  .navbar__logo {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: end;
+  }
+}

@@ -127,7 +127,7 @@ a {
   color: #f5f5f5;
   text-align: center;
   font-size: 35px;
-  margin-bottom: 40px;
+  padding-top: 20px;
 }
 
 .section-decoration {
@@ -141,13 +141,13 @@ a {
 
 .section__subtitle {
   color: #8e8e8e;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 /* Section title ends */
 
-.history-section {
+/* .history-section {
   margin-bottom: 50px;
-}
+} */
 
 .history-items {
   padding: 10px;

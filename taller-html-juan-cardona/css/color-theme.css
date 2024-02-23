@@ -3,15 +3,27 @@ body.dark * {
 }
 
 body.dark nav {
-  background-color: #8ab6d6;
+  background-color: #03045e;
 }
 
 body.dark .navbar__links {
-  background-color: #8ab6d6;
+  background-color: #03045e;
 }
 
 body.dark .navbar__menu {
-  color: #000;
+  color: #03045e;
+}
+
+body.dark .calculator-wrapper {
+  background-color: #00296b;
+}
+
+body.dark .history-section {
+  background-color: #00296b;
+}
+
+body.dark .section__title {
+  color: white;
 }
 
 body.dark section {
@@ -19,26 +31,22 @@ body.dark section {
 }
 
 body.dark .navbar__link a {
-  color: black;
+  color: white;
   font-weight: 600;
-  background-color: #8ab6d6;
+  background-color: #03045e;
 }
 
 body.dark .navbar__link a:hover {
-  background-color: #caf7e3;
+  background-color: #023e8a;
 }
 
 body.dark .navbar__logo a {
-  color: black;
+  color: white;
   font-weight: 600;
 }
 
 body.dark .navbar__logo:hover {
-  background-color: #caf7e3;
-}
-
-body.dark .section__title {
-  color: black;
+  background-color: #023e8a;
 }
 
 body.dark .section__subtitle {
@@ -139,4 +147,8 @@ body.dark .form__button:hover {
 
 body.dark .form__input:focus {
   background: linear-gradient(to bottom, transparent, #ccc);
+}
+
+body.dark .history-items {
+  color: white;
 }

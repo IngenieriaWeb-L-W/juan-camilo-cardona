@@ -1,10 +1,19 @@
 // Immediately Invoked Function Expression for the color theme switch
 ((d) => {
+  if (localStorage.getItem("theme") === "dark") {
+    d.body.classList.add("dark");
+    d.querySelector("#switch").classList.add("active");
+  }
   const $btnSwitch = d.querySelector("#switch");
 
   $btnSwitch.addEventListener("click", () => {
     d.body.classList.toggle("dark");
     $btnSwitch.classList.toggle("active");
+    if (d.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
   });
 })(document);
 
