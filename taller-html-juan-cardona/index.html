@@ -79,57 +79,80 @@
                 placeholder="Resultado"
                 class="result"
               />
-
+              <div></div>
               <input
+                id="current-operation"
                 readonly
                 type="text"
                 name="current-operation"
-                id="current-operation"
-                placeholder="Operación actual"
+                placeholder="Operación Actual"
                 class="current-operation"
               />
             </div>
 
-            <input type="button" value="C" id="clear-button" />
+            <input
+              type="button"
+              value="C"
+              id="clear-button"
+              onclick="handleClearInput()"
+            />
           </div>
 
           <div class="row-two">
-            <input type="button" value="1" />
-            <input type="button" value="2" />
-            <input type="button" value="3" />
-            <input type="button" value="=" />
+            <input type="button" value="1" onclick="handleKeyPressed('1')" />
+            <input type="button" value="2" onclick="handleKeyPressed('2')" />
+            <input type="button" value="3" onclick="handleKeyPressed('3')" />
+            <input
+              type="button"
+              value="="
+              onclick="handleOperationPressed('=')"
+            />
           </div>
 
           <div class="row-three">
-            <input type="button" value="4" />
-            <input type="button" value="5" />
-            <input type="button" value="6" />
-            <input type="button" value="x" />
+            <input type="button" value="4" onclick="handleKeyPressed('4')" />
+            <input type="button" value="5" onclick="handleKeyPressed('5')" />
+            <input type="button" value="6" onclick="handleKeyPressed('6')" />
+            <input
+              type="button"
+              value="*"
+              onclick="handleOperationPressed('*')"
+            />
           </div>
 
           <div class="row-four">
-            <input type="button" value="7" />
-            <input type="button" value="8" />
-            <input type="button" value="9" />
-            <input type="button" value="-" />
+            <input type="button" value="7" onclick="handleKeyPressed('7')" />
+            <input type="button" value="8" onclick="handleKeyPressed('8')" />
+            <input type="button" value="9" onclick="handleKeyPressed('9')" />
+            <input
+              type="button"
+              value="-"
+              onclick="handleOperationPressed('-')"
+            />
           </div>
 
           <div class="row-five">
-            <input type="button" value="/" />
-            <input type="button" value="0" />
-            <input type="button" value="." />
-            <input type="button" value="+" />
+            <input type="button" value="/" onclick="handleKeyPressed('/')" />
+            <input type="button" value="0" onclick="handleKeyPressed('0')" />
+            <input type="button" value="." onclick="handleKeyPressed('.')" />
+            <input
+              type="button"
+              value="+"
+              onclick="handleOperationPressed('+')"
+            />
           </div>
         </div>
 
-        <div class="error-alert__container container" id="error-alert">
+        <div class="error-alert__container container hidden" id="error-alert">
           <p class="error-alert__text" role="alert">
             <strong id="error-alert__title"></strong>
             <span id="error-alert__message"></span>
           </p>
         </div>
 
-        <div class="error-alert__container success-alert__container container">
+        <div
+          class="error-alert__container success-alert__container container hidden"
+        >
           <p class="success-alert__text" role="alert">
             <strong id="success-alert__title"></strong>
             <span id="success-alert__message"></span>
@@ -144,17 +167,29 @@
       <div class="container">
         <h2 class="section__title">Historial</h2>
         <div class="section-decoration"></div>
+        <div class="clean-history__container hidden">
+          <button onclick="handleRemoveOperations()" class="clean-history__btn">
+            Limpiar Operaciones
+          </button>
+        </div>
       </div>
+
+      <div class="history-empty__container hidden">
+        <p class="history-empty">No tiene operaciones en su historial</p>
+      </div>
+
+      <ul class="history-items"></ul>
     </section>
     <!-- --------------------------------------------- -->
 
     <!-- --------------------------------------------- -->
     <div class="loader">
-      <img src="img/loading.gif" class="loader__img" alt="loader-gif" />
-      <div class="enter-count"></div>
+      <img src="./img/loading.gif" class="loader__img" alt="loader-gif" />
+      <h3 class="initial-message">Bienvenido a la Calculadora Online</h3>
     </div>
     <!-- --------------------------------------------- -->
 
     <script src="./js/app.js"></script>
+    <script src="./js/calculator.js"></script>
   </body>
 </html>
